@@ -7,6 +7,7 @@ Resource   ../variables.resource
 
 ${BUTTON_RECHERCHER}     xpath=//span[text()="Rechercher"]
 ${BUTTON_ACCUEIL}        xpath=//span[text()="Accueil"]
+${HEADLESS}=    ${true}
 
 *** Keywords ***
 
