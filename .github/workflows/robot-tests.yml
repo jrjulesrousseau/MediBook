@@ -36,7 +36,7 @@ jobs:
                                   robot --outputdir TESTS/EZE_tests/results/03_result TESTS/EZE_tests/03_appointment.robot
 
                         - name: Upload Robot Framework reports
-                          uses: actions/upload-artifact@v3
+                          uses: actions/upload-artifact@v4
                           with:
                                   name: robot-results
                                   path: TESTS/EZE_tests/results/
