@@ -1,0 +1,6 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-gherkinparser
+selenium
+webdriver-manager
+robotframework-browser
