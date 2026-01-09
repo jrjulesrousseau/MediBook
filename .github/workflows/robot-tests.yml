@@ -31,12 +31,12 @@ jobs:
 
                         - name: Run Robot Framework tests
                           run: |
-                                  robot --outputdir TESTS/EZE_tests/results/01_result TESTS/EZE_tests/01_registration.robot
-                                  robot --outputdir TESTS/EZE_tests/results/02_result TESTS/EZE_tests/02_search.robot
-                                  robot --outputdir TESTS/EZE_tests/results/03_result TESTS/EZE_tests/03_appointment.robot
+                                  robot --outputdir tests/EZE_tests/results/01_result tests/EZE_tests/01_registration.robot
+                                  robot --outputdir tests/EZE_tests/results/02_result tests/EZE_tests/02_search.robot
+                                  robot --outputdir tests/EZE_tests/results/03_result tests/EZE_tests/03_appointment.robot
 
                         - name: Upload Robot Framework reports
                           uses: actions/upload-artifact@v4
                           with:
                                   name: robot-results
-                                  path: TESTS/EZE_tests/results/
+                                  path: tests/EZE_tests/results/
