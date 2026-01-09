@@ -9,6 +9,10 @@ jobs:
         robot-tests:
                 runs-on: ubuntu-latest
 
+                defaults:
+                        run:
+                                working-directory: medibook
+
                 steps:
                         - name: Checkout repository
                           uses: actions/checkout@v3
@@ -31,12 +35,12 @@ jobs:
 
                         - name: Run Robot Framework tests
                           run: |
-                                  robot --outputdir MediBook/tests/EZE_tests/results/01_result MediBook/tests/EZE_tests/01_registration.robot
-                                  robot --outputdir MediBook/tests/EZE_tests/results/02_result MediBook/tests/EZE_tests/02_search.robot
-                                  robot --outputdir MediBook/tests/EZE_tests/results/03_result MediBook/tests/EZE_tests/03_appointment.robot
+                                  robot --outputdir tests/E2E_tests/results/01_result tests/E2E_tests/01_registration.robot
+                                  robot --outputdir tests/E2E_tests/results/02_result tests/E2E_tests/02_search.robot
+                                  robot --outputdir tests/E2E_tests/results/03_result tests/E2E_tests/03_appointment.robot
 
                         - name: Upload Robot Framework reports
                           uses: actions/upload-artifact@v4
                           with:
                                   name: robot-results
-                                  path: tests/EZE_tests/results/
+                                  path: tests/E2E_tests/results/
