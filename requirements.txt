@@ -2,4 +2,3 @@ robotframework
 robotframework-seleniumlibrary
 selenium
 webdriver-manager
-robotframework-browser
