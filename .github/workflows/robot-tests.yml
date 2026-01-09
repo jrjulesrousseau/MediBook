@@ -35,6 +35,8 @@ jobs:
                           uses: nanasess/setup-chromedriver@v2
 
                         - name: Run Robot Framework tests
+                          env:
+                                  HEADLESS: "true"
                           run: |
                                   robot --outputdir tests/E2E_tests/results/01_result tests/E2E_tests/01_registration.robot
                                   robot --outputdir tests/E2E_tests/results/02_result tests/E2E_tests/02_search.robot

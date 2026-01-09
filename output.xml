@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.10.12 on linux)" generated="2026-01-09T17:55:04.761708" rpa="false" schemaversion="5">
+<suite id="s1" name="01 Registration" source="/home/jules-rousseau/Bureau/ecf-testeur-medibook-2i-v3/medibook/tests/E2E_tests/01_registration.robot">
+<test id="s1-t1" name="Successful Registration" line="13">
+<kw name="Given I am on the registration page" owner="registration_steps">
+<kw name="Open Browser To Base URL" owner="common_page">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2026-01-09T17:55:05.007319" level="INFO">${remote} = </msg>
+<var>${remote}</var>
+<arg>REMOTE_URL</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.006457" elapsed="0.000918"/>
+</kw>
+<kw name="Create Chrome Options" owner="common_page">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-09T17:55:05.008720" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x77e4cccec400&gt;</msg>
+<var>${chrome_options}</var>
+<arg>__import__("selenium.webdriver").webdriver.ChromeOptions()</arg>
+<arg>selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.008064" elapsed="0.000728"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2026-01-09T17:55:05.011094" level="FAIL">Variable '${HEADLESS}' not found.</msg>
+<arg>'${HEADLESS}'=='true'</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-01-09T17:55:05.009178" elapsed="0.002057">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.011681" elapsed="0.000076"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.012095" elapsed="0.000097"/>
+</kw>
+<return>
+<value>${chrome_options}</value>
+<status status="NOT RUN" start="2026-01-09T17:55:05.012365" elapsed="0.000089"/>
+</return>
+<var>${options}</var>
+<status status="FAIL" start="2026-01-09T17:55:05.007703" elapsed="0.005043">Variable '${HEADLESS}' not found.</status>
+</kw>
+<if>
+<branch type="IF" condition="'${remote}' != ''">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${remote}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.013254" elapsed="0.000060"/>
+</kw>
+<status status="NOT RUN" start="2026-01-09T17:55:05.012959" elapsed="0.000435"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.013697" elapsed="0.000049"/>
+</kw>
+<status status="NOT RUN" start="2026-01-09T17:55:05.013461" elapsed="0.000354"/>
+</branch>
+<status status="NOT RUN" start="2026-01-09T17:55:05.012903" elapsed="0.000957"/>
+</if>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.014042" elapsed="0.000043"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.014305" elapsed="0.000068"/>
+</kw>
+<kw name="Go To Path">
+<arg>/</arg>
+<status status="NOT RUN" start="2026-01-09T17:55:05.014640" elapsed="0.000047"/>
+</kw>
+<kw name="Reset Browser State">
+<status status="NOT RUN" start="2026-01-09T17:55:05.014876" elapsed="0.000038"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.005259" elapsed="0.009791">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="Go To Registration Page" owner="registration_page">
+<status status="NOT RUN" start="2026-01-09T17:55:05.015296" elapsed="0.000046"/>
+</kw>
+<kw name="Registration Page Should Be Visible" owner="registration_page">
+<status status="NOT RUN" start="2026-01-09T17:55:05.015551" elapsed="0.000044"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.004304" elapsed="0.011409">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="When I enter &quot;Test&quot; in the &quot;First name&quot; field" owner="registration_steps" source_name="I enter &quot;${First_name}&quot; in the &quot;First name&quot; field">
+<status status="NOT RUN" start="2026-01-09T17:55:05.016263" elapsed="0.000075"/>
+</kw>
+<kw name="And I enter &quot;Automatise&quot; in the &quot;Last name&quot; field" owner="registration_steps" source_name="I enter &quot;${last_name}&quot; in the &quot;Last name&quot; field">
+<status status="NOT RUN" start="2026-01-09T17:55:05.016863" elapsed="0.000149"/>
+</kw>
+<kw name="And I enter a unique email in the &quot;Email&quot; field" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.017605" elapsed="0.000144"/>
+</kw>
+<kw name="And I enter &quot;Password123!&quot; in the &quot;Password&quot; field" owner="registration_steps" source_name="I enter &quot;${pwd}&quot; in the &quot;Password&quot; field">
+<status status="NOT RUN" start="2026-01-09T17:55:05.018439" elapsed="0.000172"/>
+</kw>
+<kw name="And I enter &quot;Password123!&quot; in the &quot;Confirm password&quot; field" owner="registration_steps" source_name="I enter &quot;${cnf_pwd}&quot; in the &quot;Confirm password&quot; field">
+<status status="NOT RUN" start="2026-01-09T17:55:05.019364" elapsed="0.000173"/>
+</kw>
+<kw name="And I check &quot;I accept the Terms and Conditions&quot;" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.020125" elapsed="0.000121"/>
+</kw>
+<kw name="And I click on &quot;Create my account&quot;" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.020747" elapsed="0.000121"/>
+</kw>
+<kw name="Then I should see the message &quot;Account successfully created&quot;" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.021518" elapsed="0.000250"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.023147" elapsed="0.000714"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.002865" elapsed="0.021501">Variable '${HEADLESS}' not found.</status>
+</test>
+<test id="s1-t2" name="Failed registration - Email already used" line="26">
+<kw name="Given I am on the registration page" owner="registration_steps">
+<kw name="Open Browser To Base URL" owner="common_page">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2026-01-09T17:55:05.028574" level="INFO">${remote} = </msg>
+<var>${remote}</var>
+<arg>REMOTE_URL</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.027701" elapsed="0.000928"/>
+</kw>
+<kw name="Create Chrome Options" owner="common_page">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-09T17:55:05.029946" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x77e4cccefa90&gt;</msg>
+<var>${chrome_options}</var>
+<arg>__import__("selenium.webdriver").webdriver.ChromeOptions()</arg>
+<arg>selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.029354" elapsed="0.000643"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2026-01-09T17:55:05.031382" level="FAIL">Variable '${HEADLESS}' not found.</msg>
+<arg>'${HEADLESS}'=='true'</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-01-09T17:55:05.030230" elapsed="0.001318">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.031950" elapsed="0.000118"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.032540" elapsed="0.000120"/>
+</kw>
+<return>
+<value>${chrome_options}</value>
+<status status="NOT RUN" start="2026-01-09T17:55:05.032865" elapsed="0.000084"/>
+</return>
+<var>${options}</var>
+<status status="FAIL" start="2026-01-09T17:55:05.028963" elapsed="0.004282">Variable '${HEADLESS}' not found.</status>
+</kw>
+<if>
+<branch type="IF" condition="'${remote}' != ''">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${remote}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.034028" elapsed="0.000114"/>
+</kw>
+<status status="NOT RUN" start="2026-01-09T17:55:05.033557" elapsed="0.000747"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.034715" elapsed="0.000079"/>
+</kw>
+<status status="NOT RUN" start="2026-01-09T17:55:05.034373" elapsed="0.000582"/>
+</branch>
+<status status="NOT RUN" start="2026-01-09T17:55:05.033490" elapsed="0.001614"/>
+</if>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.035858" elapsed="0.000279"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2026-01-09T17:55:05.036910" elapsed="0.000153"/>
+</kw>
+<kw name="Go To Path">
+<arg>/</arg>
+<status status="NOT RUN" start="2026-01-09T17:55:05.037416" elapsed="0.000049"/>
+</kw>
+<kw name="Reset Browser State">
+<status status="NOT RUN" start="2026-01-09T17:55:05.037828" elapsed="0.000090"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.026984" elapsed="0.011134">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="Go To Registration Page" owner="registration_page">
+<status status="NOT RUN" start="2026-01-09T17:55:05.038830" elapsed="0.000093"/>
+</kw>
+<kw name="Registration Page Should Be Visible" owner="registration_page">
+<status status="NOT RUN" start="2026-01-09T17:55:05.039258" elapsed="0.000066"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.026152" elapsed="0.013368">Variable '${HEADLESS}' not found.</status>
+</kw>
+<kw name="When I enter an existing email &quot;adresse.test@email.com&quot;" owner="registration_steps" source_name="I enter an existing email &quot;${email}&quot;">
+<status status="NOT RUN" start="2026-01-09T17:55:05.040076" elapsed="0.000104"/>
+</kw>
+<kw name="And I fill the other fields correctly" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.040614" elapsed="0.000072"/>
+</kw>
+<kw name="And I click on &quot;Create my account&quot;" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.041104" elapsed="0.000081"/>
+</kw>
+<kw name="Then I should see the error message &quot;Email already used&quot;" owner="registration_steps">
+<status status="NOT RUN" start="2026-01-09T17:55:05.041597" elapsed="0.000081"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-09T17:55:05.042390" elapsed="0.000409"/>
+</kw>
+<status status="FAIL" start="2026-01-09T17:55:05.025390" elapsed="0.017618">Variable '${HEADLESS}' not found.</status>
+</test>
+<status status="FAIL" start="2026-01-09T17:55:04.763324" elapsed="0.280759"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="01 Registration" id="s1" pass="0" fail="2" skip="0">01 Registration</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-09T17:55:04.811277" level="WARN">Error in file '/home/jules-rousseau/Bureau/ecf-testeur-medibook-2i-v3/medibook/tests/Resources/pages/common_page.resource' on line 18: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
