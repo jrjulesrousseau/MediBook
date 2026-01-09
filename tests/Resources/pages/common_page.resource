@@ -15,7 +15,7 @@ Create Chrome Options
     Run Keyword If    '${HEADLESS}'=='true'    Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
-    [Return]    ${chrome_options}
+    RETURN    ${chrome_options}
     
 
 Open Browser To Base URL
