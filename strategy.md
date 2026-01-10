@@ -1,13 +1,13 @@
-# Stratégie d’automatisation des tests – MediBook (HealthTech Solutions)
+# Stratégie d'automatisation de tests - Medibook
  
-## 1. Contexte & objectifs
+## 1. Objectifs
 HealthTech Solutions (45 personnes) livre trop vite pour une validation 100% manuelle.
 Objectifs :
 - Réduire le temps de validation d’une release de 5 jours → 1 jour
 - Réduire les régressions prod ~10/mois → <2/mois
 - Atteindre ~60% de couverture automatisée (ciblée sur les parcours critiques)
  
-## 2. Périmètre de l’automatisation (quoi automatiser)
+## 2. Périmètre de l’automatisation
  
 ### 2.1 Types de tests
 1) **Smoke tests**
@@ -121,7 +121,7 @@ Pipeline type :
 4) run tests
 5) report (HTML + traces en artifact)
  
-## 6. KPI et qualité
+## 6. KPI (indicateurs clés)
 - Taux de réussite CI (flake rate)
 - Temps d’exécution des tests
 - Couverture fonctionnelle par parcours critique
@@ -130,8 +130,10 @@ Pipeline type :
 ## 7. Plan de déploiement
 Semaine 1 :
 - Mise en place framework + CI + 3 scénarios demandés
+
 Semaine 2–3 :
 - Ajout smoke + régression (annulation, erreurs)
 - Stabilisation sélecteurs + données
+
 Semaine 4 :
 - Ajout tests API / contract, exécution nightly
