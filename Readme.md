@@ -1,4 +1,4 @@
-# 📘 MediBook – Automated Test Suite (Robot Framework + Selenium)
+# MediBook - Projet d'autoatisation des tests (Robot Framework + Selenium)
 
 Ce dépôt contient la suite de tests automatisés du projet **MediBook**, développée avec :
 
@@ -16,7 +16,7 @@ Les tests couvrent les fonctionnalités principales de l’application :
 ---
 
 ## Architecture
-
+```sh
 medibook/
 │
 ├── TESTS/
@@ -49,6 +49,7 @@ medibook/
 └── .github/
 └── workflows/
 └── robot-tests.yml               # Pipeline GitHub Actions
+```
 
 ## Installer les dépendances
 ```bash
